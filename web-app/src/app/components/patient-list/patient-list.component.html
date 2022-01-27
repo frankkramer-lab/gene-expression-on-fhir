@@ -1,0 +1,52 @@
+<h1>Patients
+  <ng-template #loading>
+    <h2>Loading
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    </h2>
+  </ng-template>
+</h1>
+
+
+<div *ngIf="patients else loading">
+  <div class="card" *ngFor="let pat of patients;">
+    <div class="card-body">
+      <h5 class="card-title">{{pat.getName()}} ({{pat.gender}})</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{pat.birthDate}}</h6>
+      <div class="row no-gutters">
+        <div class="col-md-2">
+          <p class="card-text"><strong>Street: </strong>{{pat.address.line}}</p>
+          <p class="card-text"><strong>City: </strong>{{pat.address.city}}</p>
+          <p class="card-text"><strong>Zip code: </strong>{{pat.address.postalCode}}</p>
+          <p class="card-text"><strong>County: </strong>{{pat.address.district}}</p>
+          <p class="card-text"><strong>State: </strong>{{pat.address.state}}</p>
+        </div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-sm-4" *ngFor="let spec of getSpecimenById(pat.id)">
+              <div class="card border-success "  >
+                <div class="card-header">Specimen
+                  <a [routerLink]="['/expression', spec.id]" class="btn btn-outline-success float-sm-right">Show Gene Expression</a></div>
+                <div class="card-body">
+                  <h5 class="card-title">{{spec.note}}</h5>
+                  <p class="card-text">{{spec.type.display}}({{spec.type.code}})</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <ul>
+    <li *ngFor="let pat of patients;">{{pat.getName()}}
+      <p>{{pat|json}}</p></li>
+  </ul>
+</div>
+
+
+
+
