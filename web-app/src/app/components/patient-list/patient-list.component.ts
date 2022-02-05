@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Patient} from '../../models/patient';
 import {FhirService} from '../../services/fhir.service';
 import {Specimen} from '../../models/specimen';
+import {Condition} from '../../models/condition';
 
 @Component({
   selector: 'app-patient-list',
@@ -13,7 +14,8 @@ export class PatientListComponent implements OnInit {
   constructor(private fhirService: FhirService) { }
 
   patients: Patient[] | undefined;
-  specimens: Specimen[] | [];
+  specimens: Specimen[] | undefined;
+  conditions: Condition[] | undefined;
 
   getSpecimenById(id: number): Specimen[] {
     let specs = this.specimens.filter((s: Specimen) => s.subject === id);
@@ -31,6 +33,7 @@ export class PatientListComponent implements OnInit {
       this.specimens = data.entries as Specimen[];
       console.log(this.specimens);
     });
+
   }
 
 }

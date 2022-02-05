@@ -1,1 +1,87 @@
-<h1>Gene Expresssion</h1>
+<ng-template #loading>
+  <h1><strong>loading
+    <div class="spinner-border" role="status">
+      <span class="sr-only"></span>
+    </div>
+  </strong></h1>
+</ng-template>
+
+
+<div *ngIf="patient else loading">
+  <div class="container-fluid">
+
+    <div class="row h1 mt-3">Gene expression heatmap of all patients</div>
+
+    <div class="row">
+      <div class="col-md-5 mt-4 ml-0">
+        <div class="form-group input-group">
+          <input
+            type="text" class="form-control" id="searchTerm"
+            [(ngModel)]="searchTerm"
+            name="searchTerm"
+            placeholder="{{searchTermPlaceholder}}"
+            (keyup.enter)="search()">
+          <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-secondary" (click)="example()">Example</button>
+            <button class="btn btn-primary" (click)="search()">Search</button>
+          </div>
+        </div>
+        <small id="searchTermHelp" class="form-text text-muted ml-1">Type gene symbols or enseble ids seperated by spaces or commas.</small>
+      </div>
+      <div class="col-md-1 mt-4">
+        <button class="btn btn-primary" (click)="getMolecularSequences()">Browse</button>
+      </div>
+
+      <app-expression-legend class="col-md-3  offset-md-1"></app-expression-legend>
+    </div>
+
+
+    <div *ngIf="molecularSequence.length === 0" class="row mt-2">
+      <h3><i>nothing found</i></h3>
+    </div>
+
+    <div *ngIf="molecularSequence.length !== 0" class="row mt-2">
+      <table class="table table-sm w-auto">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ENSEMBL</th>
+          <th scope="col">Gene symbol</th>
+          <th scope="col" *ngFor="let spec of specimens">{{spec.note}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let molSeq of molecularSequence">
+          <th scope="row">{{molSeq.id}}</th>
+          <td><a href="{{molSeq.ensemblUrl}}" target="_blank">{{molSeq.ensembl}}</a></td>
+          <td>{{molSeq.geneSymbol}}</td>
+          <ng-template [ngIf]="molSeq.oloaded"><td *ngFor="let spec of specimens" style="background-color: {{molSeq.observations[spec.id].color}}">{{molSeq.observations[spec.id].value}}</td></ng-template>
+          <ng-template [ngIf]="! molSeq.oloaded"><td *ngFor="let spec of specimens" style=" text-align: center;">
+            <div class="spinner-border" role="status" style="height: 1em; width: 1em;">
+              <span class="sr-only"></span>
+            </div>
+          </td></ng-template>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row mb-5" [hidden]="!showPagination">
+      <div class="col-md-1 my-1">
+        <div class="btn" [ngClass]="{'disabled': isLoading, 'btn-secondary': !hasPrevious, 'btn-primary': hasPrevious}" (click)="previous()">Previous</div>
+      </div>
+      <div class="col-md-2 mt-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Go to Page</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="offset" (keyup.enter)="getMolecularSequences(offset)">
+        </div>
+
+      </div>
+      <div class="col-md-1 my-1">
+        <div class="btn" [ngClass]="{'disabled': isLoading, 'btn-secondary': !hasNext, 'btn-primary': hasNext}" (click)="next()">Next</div>
+      </div>
+    </div>
+  </div>
+</div>

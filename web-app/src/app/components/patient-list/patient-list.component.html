@@ -12,7 +12,7 @@
 <div *ngIf="patients else loading">
   <div class="card" *ngFor="let pat of patients;">
     <div class="card-body">
-      <h5 class="card-title">{{pat.getName()}} ({{pat.gender}})</h5>
+      <h5 class="card-title">{{pat.getName()}} ({{pat.gender}}) <a [routerLink]="['/expression', pat.id]" class="btn btn-outline-success float-sm-right">Show Gene Expression</a></h5>
       <h6 class="card-subtitle mb-2 text-muted">{{pat.birthDate}}</h6>
       <div class="row no-gutters">
         <div class="col-md-2">

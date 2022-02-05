@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PatientGeneExpressionComponent } from './components/patient-gene-expression/patient-gene-expression.component';
 import { GeneExpresssionComponent } from './components/gene-expresssion/gene-expresssion.component';
+import { ExpressionLegendComponent } from './components/expression-legend/expression-legend.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { GeneExpresssionComponent } from './components/gene-expresssion/gene-exp
     PatientListComponent,
     HomeComponent,
     PatientGeneExpressionComponent,
-    GeneExpresssionComponent
+    GeneExpresssionComponent,
+    ExpressionLegendComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { GeneExpresssionComponent } from './components/gene-expresssion/gene-exp
       {path: 'patients', component: PatientListComponent},
       {path: 'expression', component: GeneExpresssionComponent},
       {path: 'expression/:id', component: PatientGeneExpressionComponent}
-    ])
+    ]),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
