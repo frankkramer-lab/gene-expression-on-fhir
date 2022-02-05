@@ -1,0 +1,9 @@
+Id,BIRTHDATE,PHONE,FIRST,LAST,MAIDEN,MARITAL,RACE,ETHNICITY,GENDER,ADDRESS,CITY,STATE,COUNTY,ZIP,HEALTHCARE_EXPENSES
+Patient 1,2007-10-28,999-43-6884,Yong,Huel,,,white,american,F,1077 Zemlak Annex,Chelmsford,Massachusetts,Middlesex County,1851,247294.4
+Patient 2,1973-06-30,999-65-2599,Pedro,Jacobs,,M,white,scottish,M,435 Anderson Burg,Attleboro,Massachusetts,Bristol County,2703,1062227.64
+Patient 3,2016-06-19,999-48-1345,Bryon,Ebert,,,black,african,M,265 Beatty Dale Apt 39,Boston,Massachusetts,Suffolk County,2108,92819.74
+Patient 4,2014-07-21,999-63-8681,Carina,Sanford,,,white,irish,F,602 Bashirian Mill,Fall River,Massachusetts,Bristol County,2720,117395.82
+Patient 5,1955-09-18,999-98-1616,Carmen,Kertzmann,,M,white,english,M,1031 Ondricka Harbor,Lowell,Massachusetts,Middlesex County,1850,1355018.32
+Control 1,2004-12-23,999-93-3302,Boyce,Greenholt,,,white,french_canadian,M,1065 Haag Extension Unit 60,Taunton,Massachusetts,Bristol County,2718,361706.33
+Control 2,1979-07-31,999-79-7205,Darcie,Hyatt,Weber,M,white,german,F,1040 Cronin Trace Suite 75,Freetown,Massachusetts,Bristol County,2703,790106.95
+Control 3,1994-11-12,999-69-1467,Bruce,Reichert,,,white,scottish,M,723 DuBuque Mission Unit 78,Falmouth,Massachusetts,Barnstable County,2540,575733.69

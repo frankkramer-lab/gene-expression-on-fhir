@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir data
-
 ## download reference genome in gff3 format
 ## Genome Reference Consortium Human Build 38 release 99
 ## Homo sapiens (human)
