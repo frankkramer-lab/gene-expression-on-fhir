@@ -26,6 +26,6 @@ export class Observation {
     this.color = Color.getColor(this.value);
 
     this.derivedFrom = Number(data.derivedFrom[0].reference.split('/').pop());
-    console.log(this);
+    // console.log(this);
   }
 }

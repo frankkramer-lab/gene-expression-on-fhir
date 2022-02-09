@@ -10,41 +10,41 @@
 
 
 <div *ngIf="patients else loading">
-  <div class="card" *ngFor="let pat of patients;">
+  <div class="card mb-3" *ngFor="let pat of patients;">
     <div class="card-body">
-      <h5 class="card-title">{{pat.getName()}} ({{pat.gender}}) <a [routerLink]="['/expression', pat.id]" class="btn btn-outline-success float-sm-right">Show Gene Expression</a></h5>
+      <h5 class="card-title">{{pat.getName()}} ({{pat.gender}})
+        <a [routerLink]="['/expression', pat.id]" class="btn btn-outline-success float-sm-right">Show Gene Expression</a>
+      </h5>
       <h6 class="card-subtitle mb-2 text-muted">{{pat.birthDate}}</h6>
       <div class="row no-gutters">
-        <div class="col-md-2">
+        <div class="col-md-3">
           <p class="card-text"><strong>Street: </strong>{{pat.address.line}}</p>
           <p class="card-text"><strong>City: </strong>{{pat.address.city}}</p>
           <p class="card-text"><strong>Zip code: </strong>{{pat.address.postalCode}}</p>
           <p class="card-text"><strong>County: </strong>{{pat.address.district}}</p>
           <p class="card-text"><strong>State: </strong>{{pat.address.state}}</p>
         </div>
-        <div class="col-md-10">
-          <div class="row">
+        <div class="col-md-9">
+
+          <div class="row mb-3">
             <div class="col-sm-4" *ngFor="let spec of getSpecimenById(pat.id)">
               <div class="card border-success "  >
-                <div class="card-header">Specimen
-                  <a [routerLink]="['/expression', spec.id]" class="btn btn-outline-success float-sm-right">Show Gene Expression</a></div>
+                <div class="card-header">{{spec.type.display}} ({{spec.type.code}})</div>
                 <div class="card-body">
                   <h5 class="card-title">{{spec.note}}</h5>
-                  <p class="card-text">{{spec.type.display}}({{spec.type.code}})</p>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="row">
+            <ng-container *ngIf="getConditionById(pat.id) as cond">
+              <div class="alert alert-success ml-3">{{cond.code.code}}: {{cond.code.display}}</div>
+            </ng-container>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-  <ul>
-    <li *ngFor="let pat of patients;">{{pat.getName()}}
-      <p>{{pat|json}}</p></li>
-  </ul>
 </div>
 
 

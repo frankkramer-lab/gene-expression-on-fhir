@@ -35,7 +35,7 @@ export class FhirService {
     );
   }
 
-  //GET http://localhost:8080/fhir/Specimen?subject=Patient/1
+  // GET http://localhost:8080/fhir/Specimen?subject=Patient/1
   getSpecimensByPatient(patientId: number): Observable<Bundle> {
     const url = this.fhirEndpoint + 'Specimen?subject=Patient%2F' + patientId;
     return this.http.get<Observable<Bundle>>(url).pipe(
@@ -55,11 +55,14 @@ export class FhirService {
     );
   }
 
-  getObservationsByReference(molecularSequenceId: number, patientId: number): Observable<Bundle> {
+  getObservationsByReference(molecularSequenceId: number, patientId = -1): Observable<Bundle> {
     // derivedFrom MolecularSequence/20717
     // subject Patient/1
     // http://localhost:8080/fhir/Observation?derived-from=20717&subject=2&_pretty=true
-    const url = this.fhirEndpoint + 'Observation?derived-from=' + molecularSequenceId + '&subject=' + patientId;
+    let url = this.fhirEndpoint + 'Observation?derived-from=' + molecularSequenceId;
+    if (patientId >= 0) {
+      url += '&subject=' + patientId;
+    }
     return this.http.get<Observable<Bundle>>(url).pipe(
       map(data => new Bundle(data, 'Observation'))
     );
@@ -77,83 +80,13 @@ export class FhirService {
     );
   }
 
-  // getMolecularSequences(offset = 0, count = 12): Observable<Bundle> {
-  //   const url = this.fhirEndpoint + 'MolecularSequence?_count=' + count + '&_getpagesoffset=' + offset * count;
-  //   console.log(url);
-  //   return this.http.get<Observable<Bundle>>(url).pipe(
-  //     map(data => new Bundle(data, 'MolecularSequence'))
-  //   );
-  // }
-
-
-  getPCSMS() {
+  getPCSMS(): Observable<{patients: Bundle, conditions: Bundle, specimens: Bundle}> {
     return forkJoin({
       patients: this.getPatients(),
       conditions: this.getConditions(),
-      specimens: this.getSpecimens(),
-      molecularSequences: this.getMolecularSequences()
+      specimens: this.getSpecimens()
     });
   }
-
-  // getGeTable() {
-  //   return forkJoin({
-  //     patients: this.getPatients().pipe(first()),
-  //     conditions: this.getConditions().pipe(first()),
-  //     specimens: this.getSpecimens().pipe(first()),
-  //   }).pipe(tap(console.log)).subscribe({
-  //     next: value => console.log(value),
-  //     complete: () => console.log('This is how it ends!'),
-  //   });
-  // }
-
-  // See Meta: hydrator.effects.ts
-  // Nur nicht der erste effect (funct noch nicht)
-
-  // https://rxjs.dev/guide/operators
-  // https://blog.angular-university.io/rxjs-higher-order-mapping/
-
-  // loadData$ = createEffect(() => {
-  //   return this.actions$.pipe(
-  //     ofType(loadQueryParams),
-  //     concatMap(() => {
-  //       return forkJoin({
-  //         network: this.apiService.loadNetwork(),
-  //         patients: this.apiService.loadPatientsClassified(),
-  //         thresholds: this.apiService.loadThresholds(),
-  //       }).pipe(
-  //         map((payload) => loadDataSuccess(payload)),
-  //         catchError(() => of(loadDataFailure())),
-  //       );
-  //     }),
-  //   );
-  // });
-
-
-//   return forkJoin({
-//                     data1: this.apiService.loadStuff(),
-//   data2: this.apiService.loadOtherStuff()
-// }).pipe(
-//   map((payload) => {
-//     console.log(payload.data1);
-//     console.log(payload.data2);
-//
-//     return mergeMap({
-//       data3: this.apiService.loadLater(),
-//
-//     })
-//
-//   }),
-//   catchError(() => {
-//     console.log("Sth went wrong");
-//   }),
-// );
-
-
-  // getGeTable(): Observable<Bundle> {
-  //   let patients = this.getPatients();
-  //   let specimens = this.getSpecimens();
-  //
-  // }
 }
 
 

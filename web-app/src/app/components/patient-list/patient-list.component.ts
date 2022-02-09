@@ -18,20 +18,36 @@ export class PatientListComponent implements OnInit {
   conditions: Condition[] | undefined;
 
   getSpecimenById(id: number): Specimen[] {
-    let specs = this.specimens.filter((s: Specimen) => s.subject === id);
+    if (this.specimens === undefined) {
+      return [];
+    }
+    const specs = this.specimens.filter((s: Specimen) => s.subject === id);
     return specs;
+  }
+
+  getConditionById(id: number): Condition | undefined {
+    if (this.conditions === undefined) {
+      return undefined;
+    }
+    const condition = this.conditions.filter((c: Condition) => c.subject === id).pop();
+    return condition;
   }
 
   ngOnInit(): void {
 
     this.fhirService.getPatients().subscribe((data) => {
       this.patients = data.entries as Patient[];
-      console.log(this.patients);
+      // console.log(this.patients);
     });
 
     this.fhirService.getSpecimens().subscribe((data) => {
       this.specimens = data.entries as Specimen[];
-      console.log(this.specimens);
+      // console.log(this.specimens);
+    });
+
+    this.fhirService.getConditions().subscribe((data) => {
+      this.conditions = data.entries as Condition[];
+      // console.log(this.specimens);
     });
 
   }

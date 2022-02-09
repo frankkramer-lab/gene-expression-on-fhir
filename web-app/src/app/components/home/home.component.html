@@ -1,47 +1,14 @@
-<p>home works!</p>
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3">
-  <h1 class="h1">Experiment Results</h1>
-</div>
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-2 pb-2 mb-3 border-bottom">
-  <h2 class="h3">"Microarray analysis of oral punch biopsies from acute myeloid leukemia (AML) patients treated with chemotherapy"</h2>
-</div>
-
-<div id="legend">min->max value</div>
-
-<div class="form-check pt-2 pb-4">
-  <input class="form-check-input" type="checkbox" value="" id="logCheckbox">
-  <label class="form-check-label" for="logCheckbox">
-    log (logarithmize each value)
-  </label>
-</div>
-
-<div class="input-group mb-3">
-  <input type="text" id="gene" class="form-control" placeholder="Gene name" aria-label="Gene name" aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" value="OK" id="kk">OK</button>
-  </div>
-</div>
-
-<legend>Search in results:</legend>
-<div class="table-responsive pt-3">
-  <table class="table table-striped table-bordered mb-0" cellspacing="0" width="100%">
-    <thead>
-    <tr>
-      <th scope="col">Gene Name</th>
-      <th scope="col">Patient 1</th>
-      <th scope="col">Patient 2</th>
-      <th scope="col">Patient 3</th>
-      <th scope="col">Patient 4</th>
-      <th scope="col">Patient 5</th>
-      <th scope="col">Patient 6</th>
-      <th scope="col">Patient 7</th>
-      <th scope="col">Patient 8</th>
-      <th scope="col">Patient 9</th>
-      <th scope="col">Patient 10</th>
-      <th scope="col">Patient 11</th>
-    </tr>
-    </thead>
-    <tbody id="search-table">
-    </tbody>
-  </table>
-</div>
+<h1>Implementing semantic interoperability of gene expression profiles using the HL7 FHIR standard</h1>
+<p>
+  The characterization of diseases using high-throughput omics technologies has an increasing relevance for individualized treatment decisions.
+  Especially gene expression profiles can capture significant molecular differences that can foster patient stratification and pave the way towards precision medicine.
+  Electronic health records already evolved to capture genomic data within clinical systems and standards like FHIR enable sharing within, and even between institutions.
+</p>
+<p>
+  However, FHIR only provides profiles tailored to variations in the molecular sequence.
+  Although expression patterns are neglected in FHIR, they are equally important for decision making.
+</p>
+<p>
+  Here we provide an exemplary implementation of gene expression profiles of a microarray analysis of patients with acute myeloid leukemia using an adaption of the FHIR genomics extension.
+  Our results demonstrate how FHIR resources can be facilitated in bioinformatics-based decision support systems or used for the aggregation of molecular genetics data in multi-center clinical trials.
+</p>

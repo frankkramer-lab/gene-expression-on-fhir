@@ -41,7 +41,7 @@ export class PatientGeneExpressionComponent implements OnInit {
 
     this.fhirService.getSpecimensByPatient(this.id).subscribe((data) => {
       this.specimens = data.entries as Specimen[];
-      console.log(this.specimens);
+      // console.log(this.specimens);
     });
 
     this.getMolecularSequences();
@@ -67,7 +67,7 @@ export class PatientGeneExpressionComponent implements OnInit {
   }
 
   search(): void {
-    console.log(this.searchTerm);
+    // console.log(this.searchTerm);
     this.showPagination = false;
     const geneSymbols = [];
     const ensembleIds = [];
@@ -94,30 +94,15 @@ export class PatientGeneExpressionComponent implements OnInit {
 
 
   getMolecularSequences(offset = 0): void {
-    console.log('Get: offset=' + offset);
+    // console.log('Get: offset=' + offset);
     this.showPagination = true;
     this.molecularSequence = [];
     this.addMolecularSequences(offset);
-    // this.fhirService.getMolecularSequences(offset).subscribe((data) => {
-    //   this.molecularSequence = data.entries as MolecularSequence[];
-    //
-    //   this.hasNext = data.next !== undefined;
-    //   this.hasPrevious = data.previous !== undefined;
-    //   this.offset = offset;
-    //
-    //   this.molecularSequence.forEach(m => {
-    //     this.fhirService.getObservationsByReference(m.id, this.id).subscribe(obs => {
-    //       m.setObservations(obs.entries as Observation[]);
-    //       console.log(m.observations);
-    //     });
-    //   });
-    //   console.log(this.molecularSequence);
-    //   this.isLoading = false;
-    // });
   }
 
+
   addMolecularSequences(offset = 0, isGeneSymbol = true, searchTerms = []): void {
-    console.log('Get: offset=' + offset);
+    // console.log('Get: offset=' + offset);
 
     offset = isNaN(Number(offset)) ? 0 : Number(offset);
     offset = offset < 0 ? 0 : offset;
@@ -126,8 +111,7 @@ export class PatientGeneExpressionComponent implements OnInit {
 
     this.fhirService.getMolecularSequences(offset, ccount, isGeneSymbol, searchTerms)
       .subscribe((data) => {
-        // this.molecularSequence.concat(data.entries as MolecularSequence[]);
-        console.log('add mol seq: ' + this.molecularSequence);
+        // console.log('add mol seq: ' + this.molecularSequence);
 
         this.hasNext = data.next !== undefined;
         this.hasPrevious = data.previous !== undefined;
@@ -137,32 +121,11 @@ export class PatientGeneExpressionComponent implements OnInit {
           this.molecularSequence.push(m);
           this.fhirService.getObservationsByReference(m.id, this.id).subscribe(obs => {
             m.setObservations(obs.entries as Observation[]);
-            console.log(m.observations);
+            // console.log(m.observations);
           });
         });
-        console.log(this.molecularSequence);
+        // console.log(this.molecularSequence);
         this.isLoading = false;
     });
   }
-
-  // getMolecularSequences(offset = 0): void {
-  //   console.log('Get: offset=' + offset);
-  //   this.fhirService.getMolecularSequences(offset).subscribe((data) => {
-  //     this.molecularSequence = data.entries as MolecularSequence[];
-  //
-  //     this.hasNext = data.next !== undefined;
-  //     this.hasPrevious = data.previous !== undefined;
-  //     this.offset = offset;
-  //
-  //     this.molecularSequence.forEach(m => {
-  //       this.fhirService.getObservationsByReference(m.id, this.id).subscribe(obs => {
-  //         m.setObservations(obs.entries as Observation[]);
-  //         console.log(m.observations);
-  //       });
-  //     });
-  //     console.log(this.molecularSequence);
-  //     this.isLoading = false;
-  //   });
-  // }
-
 }

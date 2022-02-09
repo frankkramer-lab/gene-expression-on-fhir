@@ -36,6 +36,6 @@ export class MolecularSequence {
     this.start = Number(data.referenceSeq.windowStart);
     this.end = Number(data.referenceSeq.windowEnd);
     this.ensemblUrl = data.repository[0].url;
-    console.log(this);
+    // console.log(this);
   }
 }

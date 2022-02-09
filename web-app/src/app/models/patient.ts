@@ -17,8 +17,8 @@ export class Patient {
 
 
   constructor(data: any){
-    console.log("Patient:");
-    console.log(data);
+    // console.log("Patient:");
+    // console.log(data);
     this.id = Number(data.id);
     this.identifier = new Identifier(data.identifier[0]);
     this.name = new PatientName(data.name[0]);
