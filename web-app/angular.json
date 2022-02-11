@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
 //            "outputPath": "dist/GEonFHIRlocal",
-            "outputPath": "../dist",
+            "outputPath": "../docs",
             "baseHref": "https://frankkramer-lab/gene-expression-on-fhir",
             "index": "src/index.html",
             "main": "src/main.ts",
