@@ -1,0 +1,60 @@
+{
+  "resourceType": "Bundle",
+  "id": "b2f93814-2c44-482e-85cc-5bf0e6f53cd9",
+  "meta": {
+    "lastUpdated": "2022-02-11T03:30:04.997+00:00"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [ {
+    "relation": "self",
+    "url": "http://localhost:8080/fhir/Observation?derived-from=3487&subject=7"
+  } ],
+  "entry": [ {
+    "fullUrl": "http://localhost:8080/fhir/Observation/21298",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "21298",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:18:29.042+00:00",
+        "source": "#U5JEU6UJvTt38fWv"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "BAD",
+            "display": "BAD"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BRENC2:ENSG00000002330"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/7"
+      },
+      "valueInteger": 6038769,
+      "specimen": {
+        "reference": "Specimen/23"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/3487"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}

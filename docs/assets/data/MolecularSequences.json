@@ -1,0 +1,282 @@
+{
+  "resourceType": "Bundle",
+  "id": "04d0501c-366f-47ce-8c99-bd36aae1259c",
+  "meta": {
+    "lastUpdated": "2022-02-10T22:41:17.424+00:00"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [ {
+    "relation": "self",
+    "url": "http://localhost:8080/fhir/MolecularSequence?_pretty=true&identifier=ensemble_id%7CENSG00000002330"
+  } ],
+  "entry": [ {
+    "fullUrl": "http://localhost:8080/fhir/MolecularSequence/3487",
+    "resource": {
+      "resourceType": "MolecularSequence",
+      "id": "3487",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:14:35.248+00:00",
+        "source": "#TijhnWsG8SncgCQi"
+      },
+      "identifier": [ {
+        "system": "ensemble_id",
+        "value": "ENSG00000002330"
+      }, {
+        "system": "gene_symbol",
+        "value": "BAD"
+      } ],
+      "type": "dna",
+      "coordinateSystem": 1,
+      "referenceSeq": {
+        "chromosome": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/chromosome-human",
+            "code": "11",
+            "display": "chromosome 11"
+          } ]
+        },
+        "orientation": "antisense",
+        "referenceSeqId": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/sequence-referenceSeq",
+            "code": "ENSG00000002330",
+            "display": "gene:ENSG00000002330"
+          } ]
+        },
+        "windowStart": 64269830,
+        "windowEnd": 64284704
+      },
+      "repository": [ {
+        "type": "directlink",
+        "url": "https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000002330",
+        "name": "Ensembl database"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/MolecularSequence/18077",
+    "resource": {
+      "resourceType": "MolecularSequence",
+      "id": "18077",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:16:39.603+00:00",
+        "source": "#2p0sEyHsHycCuz8b"
+      },
+      "identifier": [ {
+        "system": "ensemble_id",
+        "value": "ENSG00000146648"
+      }, {
+        "system": "gene_symbol",
+        "value": "EGFR"
+      } ],
+      "type": "dna",
+      "coordinateSystem": 1,
+      "referenceSeq": {
+        "chromosome": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/chromosome-human",
+            "code": "7",
+            "display": "chromosome 7"
+          } ]
+        },
+        "orientation": "sense",
+        "referenceSeqId": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/sequence-referenceSeq",
+            "code": "ENSG00000146648",
+            "display": "gene:ENSG00000146648"
+          } ]
+        },
+        "windowStart": 55019017,
+        "windowEnd": 55211628
+      },
+      "repository": [ {
+        "type": "directlink",
+        "url": "https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000146648",
+        "name": "Ensembl database"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/MolecularSequence/19594",
+    "resource": {
+      "resourceType": "MolecularSequence",
+      "id": "19594",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:16:52.705+00:00",
+        "source": "#5syNFcnpzcIgk3sL"
+      },
+      "identifier": [ {
+        "system": "ensemble_id",
+        "value": "ENSG00000147889"
+      }, {
+        "system": "gene_symbol",
+        "value": "CDKN2A"
+      } ],
+      "type": "dna",
+      "coordinateSystem": 1,
+      "referenceSeq": {
+        "chromosome": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/chromosome-human",
+            "code": "9",
+            "display": "chromosome 9"
+          } ]
+        },
+        "orientation": "antisense",
+        "referenceSeqId": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/sequence-referenceSeq",
+            "code": "ENSG00000147889",
+            "display": "gene:ENSG00000147889"
+          } ]
+        },
+        "windowStart": 21967753,
+        "windowEnd": 21995301
+      },
+      "repository": [ {
+        "type": "directlink",
+        "url": "https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000147889",
+        "name": "Ensembl database"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/MolecularSequence/19596",
+    "resource": {
+      "resourceType": "MolecularSequence",
+      "id": "19596",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:16:52.722+00:00",
+        "source": "#xvswUVekhigt3eBn"
+      },
+      "identifier": [ {
+        "system": "ensemble_id",
+        "value": "ENSG00000147883"
+      }, {
+        "system": "gene_symbol",
+        "value": "CDKN2B"
+      } ],
+      "type": "dna",
+      "coordinateSystem": 1,
+      "referenceSeq": {
+        "chromosome": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/chromosome-human",
+            "code": "9",
+            "display": "chromosome 9"
+          } ]
+        },
+        "orientation": "antisense",
+        "referenceSeqId": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/sequence-referenceSeq",
+            "code": "ENSG00000147883",
+            "display": "gene:ENSG00000147883"
+          } ]
+        },
+        "windowStart": 22002903,
+        "windowEnd": 22009305
+      },
+      "repository": [ {
+        "type": "directlink",
+        "url": "https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000147883",
+        "name": "Ensembl database"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/MolecularSequence/20505",
+    "resource": {
+      "resourceType": "MolecularSequence",
+      "id": "20505",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:17:00.187+00:00",
+        "source": "#FKwhJGfj9JzSOJ2F"
+      },
+      "identifier": [ {
+        "system": "ensemble_id",
+        "value": "ENSG00000126752"
+      }, {
+        "system": "gene_symbol",
+        "value": "SSX1"
+      } ],
+      "type": "dna",
+      "coordinateSystem": 1,
+      "referenceSeq": {
+        "chromosome": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/chromosome-human",
+            "code": "X",
+            "display": "chromosome X"
+          } ]
+        },
+        "orientation": "sense",
+        "referenceSeqId": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/sequence-referenceSeq",
+            "code": "ENSG00000126752",
+            "display": "gene:ENSG00000126752"
+          } ]
+        },
+        "windowStart": 48255317,
+        "windowEnd": 48267444
+      },
+      "repository": [ {
+        "type": "directlink",
+        "url": "https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000126752",
+        "name": "Ensembl database"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/MolecularSequence/20717",
+    "resource": {
+      "resourceType": "MolecularSequence",
+      "id": "20717",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:17:01.823+00:00",
+        "source": "#NrO3Z41dIlfifDTn"
+      },
+      "identifier": [ {
+        "system": "ensemble_id",
+        "value": "ENSG00000000003"
+      }, {
+        "system": "gene_symbol",
+        "value": "TSPAN6"
+      } ],
+      "type": "dna",
+      "coordinateSystem": 1,
+      "referenceSeq": {
+        "chromosome": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/chromosome-human",
+            "code": "X",
+            "display": "chromosome X"
+          } ]
+        },
+        "orientation": "antisense",
+        "referenceSeqId": {
+          "coding": [ {
+            "system": "http://hl7.org/fhir/ValueSet/sequence-referenceSeq",
+            "code": "ENSG00000000003",
+            "display": "gene:ENSG00000000003"
+          } ]
+        },
+        "windowStart": 100627108,
+        "windowEnd": 100639991
+      },
+      "repository": [ {
+        "type": "directlink",
+        "url": "https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000000003",
+        "name": "Ensembl database"
+      } ]
+    }
+  }
+  ]
+}

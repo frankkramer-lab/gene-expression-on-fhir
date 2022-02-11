@@ -1,0 +1,520 @@
+{
+  "resourceType": "Bundle",
+  "id": "1bd8bc5c-4cd6-4694-a525-854d6ba0875e",
+  "meta": {
+    "lastUpdated": "2022-02-11T03:26:36.191+00:00"
+  },
+  "type": "searchset",
+  "total": 11,
+  "link": [ {
+    "relation": "self",
+    "url": "http://localhost:8080/fhir/Observation?derived-from=19594"
+  } ],
+  "entry": [ {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114646",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114646",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.193+00:00",
+        "source": "#yjPYXZtqLioKOHEG"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BREN11:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/1"
+      },
+      "valueInteger": 5838683,
+      "specimen": {
+        "reference": "Specimen/14"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114647",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114647",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.204+00:00",
+        "source": "#s6NdxCyKeA6XnSGP"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BREN21:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/2"
+      },
+      "valueInteger": 5558717,
+      "specimen": {
+        "reference": "Specimen/15"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114648",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114648",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.214+00:00",
+        "source": "#2DhIEHVyYL3rwSBl"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BREN22:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/2"
+      },
+      "valueInteger": 6105364,
+      "specimen": {
+        "reference": "Specimen/16"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114649",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114649",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.223+00:00",
+        "source": "#zuOujvPy1p2HoRsJ"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BREN32:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/3"
+      },
+      "valueInteger": 6267255,
+      "specimen": {
+        "reference": "Specimen/17"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114650",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114650",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.235+00:00",
+        "source": "#SG77Bg4lpitvQNZY"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BREN41:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/4"
+      },
+      "valueInteger": 6040631,
+      "specimen": {
+        "reference": "Specimen/18"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114651",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114651",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.246+00:00",
+        "source": "#EV0x5ByhnWdHjv1w"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BREN42:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/4"
+      },
+      "valueInteger": 6139984,
+      "specimen": {
+        "reference": "Specimen/19"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114652",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114652",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.256+00:00",
+        "source": "#bkSLdTAfTYSrbJy4"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BREN51:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/5"
+      },
+      "valueInteger": 5523091,
+      "specimen": {
+        "reference": "Specimen/20"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114653",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114653",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.265+00:00",
+        "source": "#ZtpAAHdsVjvHk7Og"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BREN52:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/5"
+      },
+      "valueInteger": 5473827,
+      "specimen": {
+        "reference": "Specimen/21"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114654",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114654",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.273+00:00",
+        "source": "#9dEIN2WED52ZsrQR"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BRENC1:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/6"
+      },
+      "valueInteger": 5388622,
+      "specimen": {
+        "reference": "Specimen/22"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114655",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114655",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.284+00:00",
+        "source": "#rd75OlPzToJPWUBA"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BRENC2:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/7"
+      },
+      "valueInteger": 5252077,
+      "specimen": {
+        "reference": "Specimen/23"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  }, {
+    "fullUrl": "http://localhost:8080/fhir/Observation/114656",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "114656",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-02-10T21:33:30.296+00:00",
+        "source": "#joXWx6M4M9V7dv5A"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.genenames.org",
+            "code": "CDKN2A",
+            "display": "CDKN2A"
+          } ]
+        }
+      } ],
+      "identifier": [ {
+        "system": "study_internal_id",
+        "value": "Mucositis-BRENC3:ENSG00000147889"
+      } ],
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/ValueSet/observation-codes",
+          "code": "48018-6",
+          "display": "Gene studied"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/8"
+      },
+      "valueInteger": 5295755,
+      "specimen": {
+        "reference": "Specimen/24"
+      },
+      "derivedFrom": [ {
+        "reference": "MolecularSequence/19594"
+      } ]
+    },
+    "search": {
+      "mode": "match"
+    }
+  } ]
+}
