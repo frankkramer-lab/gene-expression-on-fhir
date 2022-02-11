@@ -10,6 +10,7 @@ import { PatientGeneExpressionComponent } from './components/patient-gene-expres
 import { GeneExpresssionComponent } from './components/gene-expresssion/gene-expresssion.component';
 import { ExpressionLegendComponent } from './components/expression-legend/expression-legend.component';
 import {FormsModule} from '@angular/forms';
+import { FhirServerComponent } from './components/fhir-server/fhir-server.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import {FormsModule} from '@angular/forms';
     HomeComponent,
     PatientGeneExpressionComponent,
     GeneExpresssionComponent,
-    ExpressionLegendComponent
+    ExpressionLegendComponent,
+    FhirServerComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
+      {path: 'server', component: FhirServerComponent},
       {path: 'patients', component: PatientListComponent},
       {path: 'expression', component: GeneExpresssionComponent},
       {path: 'expression/:id', component: PatientGeneExpressionComponent}

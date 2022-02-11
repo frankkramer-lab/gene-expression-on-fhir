@@ -1,14 +1,57 @@
-<h1>Implementing semantic interoperability of gene expression profiles using the HL7 FHIR standard</h1>
-<p>
-  The characterization of diseases using high-throughput omics technologies has an increasing relevance for individualized treatment decisions.
-  Especially gene expression profiles can capture significant molecular differences that can foster patient stratification and pave the way towards precision medicine.
-  Electronic health records already evolved to capture genomic data within clinical systems and standards like FHIR enable sharing within, and even between institutions.
-</p>
-<p>
-  However, FHIR only provides profiles tailored to variations in the molecular sequence.
-  Although expression patterns are neglected in FHIR, they are equally important for decision making.
-</p>
-<p>
-  Here we provide an exemplary implementation of gene expression profiles of a microarray analysis of patients with acute myeloid leukemia using an adaption of the FHIR genomics extension.
-  Our results demonstrate how FHIR resources can be facilitated in bioinformatics-based decision support systems or used for the aggregation of molecular genetics data in multi-center clinical trials.
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <h1 class="ml-3 mt-3">Explore the gene expression of patients stored on a FHIR server</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Abstract</h2>
+      <p>
+        The characterization of diseases using high-throughput omics technologies has an increasing relevance for individualized treatment decisions.
+        Especially gene expression profiles can capture significant molecular differences that can foster patient stratification and pave the way towards precision medicine.
+        Electronic health records already evolved to capture genomic data within clinical systems and standards like FHIR enable sharing within, and even between institutions.
+      </p>
+      <p>
+        However, FHIR only provides profiles tailored to variations in the molecular sequence.
+        Although expression patterns are neglected in FHIR, they are equally important for decision making.
+      </p>
+      <p>
+        Here we provide an exemplary implementation of gene expression profiles of a microarray analysis of patients with acute myeloid leukemia using an adaption of the FHIR genomics extension.
+        Our results demonstrate how FHIR resources can be facilitated in bioinformatics-based decision support systems or used for the aggregation of molecular genetics data in multi-center clinical trials.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h2>Gene Expression Data</h2>
+      <p>
+        <small><i>
+          J.-L. C. Mougeot, F. K. Bahrani-Mougeot, P. B. Lockhart, and M. T. Brennan, “Microarray analyses of oral punch biopsies from acute myeloid leukemia (AML) patients treated with chemotherapy,” Oral Surgery, Oral Medicine, Oral Pathology, Oral Radiology, and Endodontology, vol. 112, no. 4, pp. 446–452, Oct. 2011,
+          <a href="https://doi.org/10.1016/j.tripleo.2011.05.009">https://doi.org/10.1016/j.tripleo.2011.05.009</a>.
+        </i></small>
+      </p>
+      <p>
+        The authors made the data  available at the  EBI Expression Atlas portal by the ID <a href="https://www.ebi.ac.uk/arrayexpress/experiments/E-GEOD-10746/">E-GEOD-10746</a>.
+      </p>
+      <p>
+        The data set examines a dose-limiting side effect in patients diagnosed with acute myeloid leukemia (AML) that are treated with chemotherapy.
+        In particular mucositis, a  DNA damage within the oral mucosa caused by the chemotherapy is investigated based on the derived gene expression profiles.
+        The samples are collected from punch buccal biopsies from five AML patients pre- and post-chemotherapy, and three healthy controls for comparison.
+      </p>
+      <p>
+        Microarray analysis was performed using <a href="https://www.thermofisher.com/order/catalog/product/900466"> Human Genome U133 Plus 2.0 Array</a> with
+        <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/">GRCh38.p13 (Genome Reference Consortium Human Build 38, Ensembl release 99)</a>
+        as reference, followed by a Robust Multichip Average (RMA) normalization of the raw data.
+        Subsequently Linear Models for Microarray data (LIMMA) and Significance Analysis of Microarrays (SAM) was applied to identified genes potentially affected by the presence of AML, or predictive of oral mucositis after chemotherapy.
+      </p>
+      <p>
+        Detailed information about the sample donors was not included in the original data set to preserve  anonymity of the participants, instead we used artificially generated data using
+        <a href="https://github.com/synthetichealth/synthea">Synthea<sup>TM</sup></a> to create Patient resources as reference.
+      </p>
+      <p>
+        We chose this gene expression data set because the conducted analysis represents a typical bioinformatics workflow resulting in several gene expression profiles from the same and different individuals that enable disease classification and patient stratification into risk groups.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+

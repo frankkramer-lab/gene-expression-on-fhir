@@ -3,6 +3,7 @@ import {Patient} from '../../models/patient';
 import {FhirService} from '../../services/fhir.service';
 import {Specimen} from '../../models/specimen';
 import {Condition} from '../../models/condition';
+import {ServerStatus} from '../../models/server-status';
 
 @Component({
   selector: 'app-patient-list',
@@ -16,6 +17,8 @@ export class PatientListComponent implements OnInit {
   patients: Patient[] | undefined;
   specimens: Specimen[] | undefined;
   conditions: Condition[] | undefined;
+
+  serverStatus: ServerStatus | undefined;
 
   getSpecimenById(id: number): Specimen[] {
     if (this.specimens === undefined) {
@@ -34,6 +37,11 @@ export class PatientListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.fhirService.getServerStatus().subscribe(status => {
+        this.serverStatus = status;
+      }
+    );
 
     this.fhirService.getPatients().subscribe((data) => {
       this.patients = data.entries as Patient[];

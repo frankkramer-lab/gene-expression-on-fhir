@@ -6,6 +6,9 @@
     </div>
     </h2>
   </ng-template>
+  <ng-template [ngIf]="serverStatus && !serverStatus.status">
+    &nbsp;<small><i>(Example data)</i></small>
+  </ng-template>
 </h1>
 
 

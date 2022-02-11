@@ -3,14 +3,20 @@
 <!--    <img src="assets/img/MISIT.png" alt="Lehrstuhl für IT-Infrastrukturen für die Translationale Medizinische Forschung" height="27" style="margin-left: 20px">&nbsp;MISIT-->
 <!--  </a>-->
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/misit/" target="_blank">
-    <img src="assets/img/MISIT.png" alt="Lehrstuhl für IT-Infrastrukturen für die Translationale Medizinische Forschung" height="27" style="margin-left: 20px">&nbsp;MISIT - Augsburg University</a>
-  <a class="nav-link disabled" href="#" >http://localhost:8080/fhir/</a>
+    FHIR Gene Expression Explorer
+<!--    &nbsp;-->
+<!--    <i class="topbarIcon" data-fa-i2svg="">-->
+<!--      <svg class="svg-inline&#45;&#45;fa fa-fire fa-w-12" style="height: 20px;color: red;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="fire" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path></svg>-->
+<!--    </i>-->
+<!--    &nbsp; HAPI FHIR Server-->
+  </a>
+<!--  <a class="nav-link disabled" href="#" >http://localhost:8080/fhir/</a>-->
 
   <a class="nav-item text-nowrap">
     <a class="navbar-brand" href="http://localhost:8080" target="_blank">
-      &nbsp;
-      <i class="topbarIcon" data-fa-i2svg=""><svg class="svg-inline--fa fa-fire fa-w-12" style="height: 20px;color: red;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="fire" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path></svg></i>
-      &nbsp; FHIR Server
+      <img src="assets/img/MISIT.png" alt="Lehrstuhl für IT-Infrastrukturen für die Translationale Medizinische Forschung" height="27" style="margin-left: 20px" />
+      &nbsp;MISIT - Augsburg University
+
     </a>
   </a>
 
@@ -29,13 +35,17 @@
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
           <li class='nav-item'>
-            <a class='nav-link' routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-
+            <a class='nav-link' routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/patients" routerLinkActive="active">Patients</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/expression" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Gene Expression</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/server" routerLinkActive="active">FHIR server</a>
           </li>
         </ul>
       </div>

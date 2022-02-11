@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 
-from fhir_resources import Patient
+from data_models.patient import Patient
 from data_models.bundle import Bundle
 from gff3 import gff3
 

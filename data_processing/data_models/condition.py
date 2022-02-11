@@ -37,8 +37,8 @@ class Condition:
 
         coding = CodeableConcept()
         coding.coding = [{'system': "http://fhir.de/ValueSet/bfarm/icd-10-gm",
-                    'code': 'C92.00',
-                    'display': 'Akute myeloblastische Leukämie [AML] : Ohne Angabe einer kompletten Remission'}]
+                    'code': '2A60.3',
+                    'display': 'Acute myeloid leukaemia, not elsewhere classified by criteria of other types'}]
         resource['code'] = coding
 
         self.resource = FHIRCondition.parse_obj(resource)

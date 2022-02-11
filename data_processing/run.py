@@ -4,7 +4,7 @@ from data_models.condition import Condition
 from data_models.molecular_sequence import MolecularSequence
 from data_models.observation import Observation
 from data_models.specimen import Specimen
-from fhir_resources import Patient
+from data_models.patient import Patient
 from server import FHIR_server
 from study import Study
 

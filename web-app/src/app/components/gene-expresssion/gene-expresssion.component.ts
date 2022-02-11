@@ -7,6 +7,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Observation} from '../../models/observation';
 import {Condition} from '../../models/condition';
 import {TableHead} from '../../models/table-head';
+import {ServerStatus} from '../../models/server-status';
 
 @Component({
   selector: 'app-gene-expresssion',
@@ -14,6 +15,8 @@ import {TableHead} from '../../models/table-head';
   styleUrls: ['./gene-expresssion.component.css']
 })
 export class GeneExpresssionComponent implements OnInit {
+
+  serverStatus: ServerStatus | undefined;
 
   patients: Patient[] | undefined;
   conditions: Condition[] = [];
@@ -35,6 +38,11 @@ export class GeneExpresssionComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
 
+    this.fhirService.getServerStatus().subscribe(status => {
+        this.serverStatus = status;
+      }
+    );
+
     this.fhirService.getPCSMS().subscribe(obj => {
       this.tableHead.get('None');
       this.conditions = obj.conditions.entries as Condition[];
@@ -52,7 +60,7 @@ export class GeneExpresssionComponent implements OnInit {
 
       // console.log('TableHead:');
       // console.log(this.tableHead);
-      this.tableHead.children.forEach(c => console.log(c.getColspan()));
+      // this.tableHead.children.forEach(c => console.log(c.getColspan()));
     });
 
     this.getMolecularSequences();
@@ -88,7 +96,7 @@ export class GeneExpresssionComponent implements OnInit {
   }
 
   search(): void {
-    console.log(this.searchTerm);
+    // console.log(this.searchTerm);
     this.showPagination = false;
     const geneSymbols = [];
     const ensembleIds = [];
@@ -115,14 +123,14 @@ export class GeneExpresssionComponent implements OnInit {
 
 
   getMolecularSequences(offset = 0): void {
-    console.log('Get: offset=' + offset);
+    // console.log('Get: offset=' + offset);
     this.showPagination = true;
     this.molecularSequence = [];
     this.addMolecularSequences(offset);
   }
 
   addMolecularSequences(offset = 0, isGeneSymbol = true, searchTerms = []): void {
-    console.log('Get: offset=' + offset);
+    // console.log('Get: offset=' + offset);
 
     offset = isNaN(Number(offset)) ? 0 : Number(offset);
     offset = offset < 0 ? 0 : offset;
@@ -131,7 +139,7 @@ export class GeneExpresssionComponent implements OnInit {
 
     this.fhirService.getMolecularSequences(offset, ccount, isGeneSymbol, searchTerms)
       .subscribe((data) => {
-        console.log('add mol seq: ' + this.molecularSequence);
+        // console.log('add mol seq: ' + this.molecularSequence);
 
         this.hasNext = data.next !== undefined;
         this.hasPrevious = data.previous !== undefined;

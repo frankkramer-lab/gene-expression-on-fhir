@@ -11,7 +11,11 @@
 
   <div class="container-fluid">
 
-    <div class="row h1 mt-3">Gene expression of <strong class="mx-2"> {{patient.getName()}} </strong>({{patient.gender}})</div>
+    <div class="row h1 mt-3">Gene expression of <strong class="mx-2"> {{patient.getName()}} </strong>({{patient.gender}})
+      <ng-template [ngIf]="serverStatus && !serverStatus.status">
+        &nbsp;<small><i>(Example data)</i></small>
+      </ng-template>
+    </div>
 
     <div class="row">
       <div class="col-md-5 mt-4 ml-0">

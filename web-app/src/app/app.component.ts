@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FhirService} from './services/fhir.service';
 
 @Component({
   selector: 'app-root',

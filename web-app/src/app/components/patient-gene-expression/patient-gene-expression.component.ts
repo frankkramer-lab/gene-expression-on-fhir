@@ -8,6 +8,7 @@ import {FhirService} from '../../services/fhir.service';
 import {MolecularSequence} from '../../models/molecular-sequence';
 import {Observation} from '../../models/observation';
 import {map} from 'rxjs/operators';
+import {ServerStatus} from '../../models/server-status';
 
 @Component({
   selector: 'app-patient-gene-expression',
@@ -17,6 +18,7 @@ import {map} from 'rxjs/operators';
 export class PatientGeneExpressionComponent implements OnInit {
 
   id: number;
+  serverStatus: ServerStatus | undefined;
   patient: Patient | undefined;
   specimens: Specimen[] | undefined;
   molecularSequence: MolecularSequence[] | undefined;
@@ -32,6 +34,11 @@ export class PatientGeneExpressionComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.fhirService.getServerStatus().subscribe(status => {
+        this.serverStatus = status;
+      }
+    );
 
     this.isLoading = true;
 

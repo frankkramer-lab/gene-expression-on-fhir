@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row h1 mt-3">
+    <i class="topbarIcon" data-fa-i2svg="">
+      <svg class="svg-inline--fa fa-fire fa-w-12" style="height: 50px;color: red;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="fire" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path></svg>
+    </i>
+    &nbsp;FHIR server settings</div>
+  <div class="row">
+    <h5 class="col-md-5 mt-4 ml-0">Current FHIR server endpoint:</h5>
+  </div>
+  <div class="row">
+    <div class="col-md-5 mt-4 ml-0">
+      <ng-template [ngIf]="serverStatus === undefined">
+        <div class="alert alert-secondary">loading
+          <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="serverStatus !== undefined">
+        <div class="alert" [ngClass]="{'alert-success': serverStatus.status, 'alert-danger': !serverStatus.status}">
+          {{serverStatus.fhirEndpoint}}
+
+          <a href="{{serverStatus.fhirEndpoint}}" target="_blank" class="btn btn-success float-right btn-sm">Open</a>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 mt-4 ml-0">
+      <div class="form-group input-group">
+        <input
+          type="text" class="form-control" id="searchTerm"
+          [(ngModel)]="fhirEndpoint"
+          name="searchTerm"
+          placeholder="{{fhirEndpoint}}"
+          (keyup.enter)="checkServer()">
+        <div class="input-group-append" id="button-addon4">
+          <button class="btn btn-secondary" (click)="defaultFhirServer()">Default</button>
+          <button class="btn btn-primary" (click)="checkServer()">Update</button>
+        </div>
+      </div>
+      <small id="searchTermHelp" class="form-text text-muted ml-1">Enter a valid url of an FHIR server API endpoint</small>
+    </div>
+  </div>
+
+<!--  <h1>{{serverStatus.status}}</h1>-->
+<!--  <button (click)="checkServer()">Check</button>-->
+</div>

@@ -10,7 +10,11 @@
 <div *ngIf="tableHead.children.length > 0 else loading">
   <div class="container-fluid">
 
-    <div class="row h1 mt-3">Gene expression heatmap of all patients</div>
+    <div class="row h1 mt-3">Gene expression heatmap of all patients
+      <ng-template [ngIf]="serverStatus && !serverStatus.status">
+        &nbsp;<small><i>(Example data)</i></small>
+      </ng-template>
+    </div>
 
     <div class="row">
       <div class="col-md-5 mt-4 ml-0">
